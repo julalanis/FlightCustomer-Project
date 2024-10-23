@@ -3,6 +3,16 @@ public class Customer extends CustomerInfo {
     private String name;
     private int age;
 
+    //constructor with no parameters
+    Customer(){
+    }
+
+    //constructor with parameters
+    Customer(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+
     //get methods for 2 variables
     String getName(){
         return name;
@@ -23,13 +33,14 @@ public class Customer extends CustomerInfo {
 
     //importanceLevel method
     public String importanceLevel(){
-        return "Uncategoried";
+        return "Uncategorized";
     }
 
     //toString method
     public String toString(){
-        return "Customer: " + name + "\n" +
-                "Age: " + age;
+        return "Customer name: " + name + "\n" +
+                "Customer age: " + age + "\n" +
+                "Customer importance level: " + importanceLevel();
     }
 
 }
