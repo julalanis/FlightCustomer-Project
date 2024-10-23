@@ -3,6 +3,18 @@ public class FlightCustomer extends Customer {
     private int seatNumber;
     private double ticketPrice;
 
+    //constructor with no parameters
+    FlightCustomer(){
+    }
+
+    //constructor with parameters
+    FlightCustomer(String name, int age, int seatNumber, double ticketPrice){
+        setName(name);
+        setAge(age);
+        this.seatNumber = seatNumber;
+        this.ticketPrice = ticketPrice;
+    }
+
     //get methods for 2 variables
     int getSeatNumber(){
         return seatNumber;
@@ -24,17 +36,21 @@ public class FlightCustomer extends Customer {
     //importanceLevel method to override Customer
     @Override
     public String importanceLevel(){
-        if (ticketPrice <= 50){
+        if (seatNumber <= 50){
             return "Gold";
-        } else if (ticketPrice <= 100){
+        } else if (seatNumber <= 100){
             return "Silver";
-        } else if (ticketPrice <= 150){
+        } else if (seatNumber <= 150){
             return "Bronze";
         } else return "Regular";
     }
 
     //toString method
     public String toString(){
-        return //unsure what to return yet.
+        return  "Customer name: " + getName() + "\n" +
+                "Customer age: " + getAge() + "\n" +
+                "Customer's importance level: " + importanceLevel() + "\n" +
+                "Customer seat number: " + seatNumber + "\n" +
+                "Customer ticket price: " + ticketPrice;
     }
 }
