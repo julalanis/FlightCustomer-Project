@@ -20,6 +20,10 @@ public class CustomerInfo {
 
         System.out.println(flightCustom2.toString());
 
+        System.out.println();
+        customer1.setName("Customer1");
+        System.out.println(customer1.getName());
+
 
     }
 }
