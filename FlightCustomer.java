@@ -34,15 +34,21 @@ public class FlightCustomer extends Customer {
     }
 
     //importanceLevel method to override Customer
+    //no values given for ticketPrice and rankings, 1000+ Gold, 500-999 Silver, 250-499 Bronze, 0-250 Regular
+    //EXTRA CREDIT: Seat assignments depending on ranking added
     @Override
     public String importanceLevel(){
-        if (seatNumber <= 50){
+        if (ticketPrice >= 1000.00){
+            this.seatNumber = (int)(Math.random() * 50);
             return "Gold";
-        } else if (seatNumber <= 100){
+        } else if (ticketPrice >= 500.00){
+            this.seatNumber = (int)(Math.random() * 50) + 50;
             return "Silver";
-        } else if (seatNumber <= 150){
+        } else if (ticketPrice >= 250.00){
+            this.seatNumber = (int)(Math.random() * 50) + 100;
             return "Bronze";
-        } else return "Regular";
+        } else this.seatNumber = (int)(Math.random() * 50) + 150;
+         return "Regular";
     }
 
     //toString method
