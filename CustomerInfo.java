@@ -1,3 +1,15 @@
+/** Student Name: Julie Alanis
+ * Date Completed: 10/25/2024
+ * Project No.& Page No.: Chapter 11 PP Julie Alanis
+ * Extra Credit: Yes, Extra Credit 1 (See lines 98-112)
+ * Project Description: This project consists of the CustomerInfo driver class, along with Customer, RetailCustomer and Flight Customer
+ *                      subclasses, each with their respective constructors, accessors and mutators, importanceLevel and toString methods.
+ *                      Unique to the RetailCustomer class are the number of items purchased and total spent which is used to calculate
+ *                      its importanceLevel. Unique to the FlightCustomer class is the price of their flight ticket, which determines their
+ *                      importanceLevel which then determines their seat number. CustomerInfo class has been reserved for displaying all outputs.
+ *                      Extra Credit 1 has been included at the end regarding seat number assignment.
+ **/
+
 import java.lang.Math;
 import java.util.ArrayList;
 
@@ -78,8 +90,12 @@ public class CustomerInfo {
                             "method for all the Customer elements. This is done in a for loop." + "\n");
 
         for (int m = 0; m < customerList.size(); m++){
-            System.out.println(customerList.get(m));
-            System.out.println();
+            if (customerList.get(m) instanceof RetailCustomer) {
+                System.out.println(customerList.get(m).toString() + "\n");
+            } else if (customerList.get(m) instanceof FlightCustomer) {
+                System.out.println(customerList.get(m).toString() + "\n");
+            } else System.out.println(customerList.get(m).toString() + "\n");
+
         }
 
         System.out.println("Extra credit 1: Based on the importanceLevel of Customer, 200 seats should be divided into four categories: " + "\n" +
@@ -98,7 +114,8 @@ public class CustomerInfo {
         flightCustomer1.setTicketPrice(100.99);
         System.out.println(flightCustomer1 + "\n");
 
-        System.out.println("That is enough Customer information for today!");
+        System.out.println("That is enough Customer information for today!" + "\n" +
+                            "Fun fact, did you know Tato and Riley are my cats' names?");
 
     }
 }
