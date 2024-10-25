@@ -49,7 +49,8 @@ public class RetailCustomer extends Customer {
 
         //toString method
         public String toString(){
-        return "Customer name: " + getName() + "\n" +
+        return  "Retail Customer: " + "\n" +
+                "Customer name: " + getName() + "\n" +
                 "Customer age: " + getAge() + "\n" +
                 "Customer's importance level: " + importanceLevel() + "\n" +
                 "Number of Items Purchased: " + getNumberOfItemsPurchased() + "\n" +
