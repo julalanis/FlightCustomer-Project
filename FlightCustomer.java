@@ -53,7 +53,8 @@ public class FlightCustomer extends Customer {
 
     //toString method
     public String toString(){
-        return  "Customer name: " + getName() + "\n" +
+        return  "Flight Customer: " + "\n" +
+                "Customer name: " + getName() + "\n" +
                 "Customer age: " + getAge() + "\n" +
                 "Customer's importance level: " + importanceLevel() + "\n" +
                 "Customer seat number: " + seatNumber + "\n" +
