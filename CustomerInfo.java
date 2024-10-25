@@ -51,27 +51,54 @@ public class CustomerInfo {
                 "change the amount of total spent to 500 by using the instanceof operator to test what type of Customer " + "\n" +
                 "each array element is. This is done in a for loop. " + "\n");
 
-        //DO THE INSTANCE OF STUFF HERE
+        for (int k = 0; k < customerList.size(); k++){
+            if (customerList.get(k) instanceof FlightCustomer){
+                ((FlightCustomer)customerList.get(k)).setTicketPrice(2000.00);
+            } else if (customerList.get(k) instanceof RetailCustomer){
+                ((RetailCustomer)customerList.get(k)).setTotalSpent(500.00);
+            }
+        }
 
         System.out.println("That was done. Now call the getName method to display each Customer's name and call the " + "\n" +
                 "getTotalSpent method for Retail Customers and getTicketPrice for Flight Customers. " + "\n" +
-                "This is done in a for loop. " + "\n");
+                "This is done in a for loop. ");
 
-        //DO THE PRINTING HERE
+        for (int l = 0; l < customerList.size(); l++){
+            if (customerList.get(l) instanceof RetailCustomer) {
+                System.out.println(customerList.get(l).getName());
+               System.out.println(((RetailCustomer) customerList.get(l)).getTotalSpent());
+            } else if (customerList.get(l) instanceof FlightCustomer){
+                System.out.println(customerList.get(l).getName());
+                System.out.println(((FlightCustomer) customerList.get(l)).getTicketPrice());
+            }
+            System.out.println();
+        }
 
         System.out.println("Finally, display each customer's information by calling the toString method and the importanceLevel" + "\n" +
                             "method for all the Customer elements. This is done in a for loop." + "\n");
 
-        //REPRINTING LIKE IN THE BEGINNING BUT EVEYRONE'S CUSTOMER# STILL WITH INSTANCEOF CHANGES FROM  BEFORE.
+        for (int m = 0; m < customerList.size(); m++){
+            System.out.println(customerList.get(m));
+            System.out.println();
+        }
+
+        System.out.println("Extra credit 1: Based on the importanceLevel of Customer, 200 seats should be divided into four categories: " + "\n" +
+                           "Seats 1-50 Gold ($1000+), 51-100 Silver ($500+), 101-150 Bronze ($250), 151-200 Regular (Anything below $250)." + "\n" +
+                           "Now assigning appropriate values to display this assignment with flightCustomer object." + "\n");
+
+        flightCustomer1.setTicketPrice(1000);
+        System.out.println(flightCustomer1 + "\n");
+
+        flightCustomer1.setTicketPrice(550.99);
+        System.out.println(flightCustomer1 + "\n");
+
+        flightCustomer1.setTicketPrice(255.99);
+        System.out.println(flightCustomer1 + "\n");
+
+        flightCustomer1.setTicketPrice(100.99);
+        System.out.println(flightCustomer1 + "\n");
 
         System.out.println("That is enough Customer information for today!");
-
-
-/*
-        System.out.println();
-        customer1.setName("Customer1");
-        System.out.println(customer1.getName()); */
-
 
     }
 }
