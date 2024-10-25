@@ -5,6 +5,8 @@ public class Customer extends CustomerInfo {
 
     //constructor with no parameters
     Customer(){
+        this.name = "Unknown";
+
     }
 
     //constructor with parameters
@@ -13,9 +15,10 @@ public class Customer extends CustomerInfo {
         this.age = age;
     }
 
+
     //get methods for 2 variables
     String getName(){
-        return name;
+        return (name != null) ? name : "Unknown";
     }
 
     int getAge(){
