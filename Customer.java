@@ -1,4 +1,4 @@
-public class Customer extends CustomerInfo {
+public class Customer{
     //named variables
     private String name;
     private int age;
