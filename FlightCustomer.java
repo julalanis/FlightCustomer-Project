@@ -29,35 +29,42 @@ public class FlightCustomer extends Customer {
         this.seatNumber = seatNumber;
     }
 
-    public void setTicketPrice(double ticketPrice){
+    public void setTicketPrice(double ticketPrice) {
         this.ticketPrice = ticketPrice;
+        
+        // Assign seat number based on ticket price directly here
+        //EXTRA CREDIT: Seat assignments depending on ranking moved from importanceLevel to setTicketPrice)
+        if (ticketPrice >= 1000.00) {
+            this.seatNumber = (int) (Math.random() * 50);
+        } else if (ticketPrice >= 500.00) {
+            this.seatNumber = (int) (Math.random() * 50) + 50;
+        } else if (ticketPrice >= 250.00) {
+            this.seatNumber = (int) (Math.random() * 50) + 100;
+        } else {
+            this.seatNumber = (int) (Math.random() * 50) + 150;
+        }
     }
 
     //importanceLevel method to override Customer
     //no values given for ticketPrice and rankings, 1000+ Gold, 500-999 Silver, 250-499 Bronze, 0-250 Regular
-    //EXTRA CREDIT: Seat assignments depending on ranking added
     @Override
-    public String importanceLevel(){
-        if (ticketPrice >= 1000.00){
-            this.seatNumber = (int)(Math.random() * 50);
+    public String importanceLevel() {
+        if (ticketPrice >= 1000.00) {
             return "Gold";
-        } else if (ticketPrice >= 500.00){
-            this.seatNumber = (int)(Math.random() * 50) + 50;
+        } else if (ticketPrice >= 500.00) {
             return "Silver";
-        } else if (ticketPrice >= 250.00){
-            this.seatNumber = (int)(Math.random() * 50) + 100;
+        } else if (ticketPrice >= 250.00) {
             return "Bronze";
-        } else this.seatNumber = (int)(Math.random() * 50) + 150;
-         return "Regular";
+        } else {
+            return "Regular";
+        }
     }
 
     //toString method
     public String toString(){
         return  "Flight Customer: " + "\n" +
-                "Customer name: " + getName() + "\n" +
-                "Customer age: " + getAge() + "\n" +
-                "Customer's importance level: " + importanceLevel() + "\n" +
-                "Customer seat number: " + seatNumber + "\n" +
+                super.toString() +
+                "\nCustomer seat number: " + seatNumber + "\n" +
                 "Customer ticket price: " + ticketPrice;
     }
 }
